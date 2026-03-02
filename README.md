@@ -1,14 +1,14 @@
 # 🌍 Ultimate AI Travel Concierge
 
-## 🚀 Overview
-A modern AI travel-planning web app that orchestrates **18 specialized agents** and an **AutoAnswer engine** to build a complete trip package.
+## 🚀 Refreshed Experience
+A modern AI travel-planning web app that orchestrates **18 specialized agents** plus an **AutoAnswer engine** to produce a complete travel package.
 
-## ✅ What’s Included
-- Trip planner form with destination, travel type, depth, output format, and departure date
-- Auto-generated package preview with all major deliverables
-- AutoAnswer quick-response panel for key travel questions
-- 18-agent ecosystem visibility (core + specialized agents)
-- Enhanced intelligence highlights (weather, safety, transit, rewards, culture)
+## ✅ What’s New in This Refresh
+- Cleaner hero area with quick capability highlights
+- Improved planner UX with a dedicated reset flow
+- On-page generated package summary and deliverables grid
+- AutoAnswer quick responses for 8 key travel topics
+- Responsive layout improvements for cards and controls
 
 ## 📦 Final Package Deliverables
 - Executive Summary

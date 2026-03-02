@@ -1,47 +1,23 @@
 const deliverables = [
-    {
-        title: 'Executive Summary',
-        detail: 'Trip strategy, timing windows, and budget posture overview.'
-    },
-    {
-        title: 'Booking Dashboard',
-        detail: 'Flight, stay, activity, and transfer checkpoints with cost snapshots.'
-    },
-    {
-        title: 'Cultural Guide',
-        detail: 'Etiquette basics, local norms, and practical language starter phrases.'
-    },
-    {
-        title: 'Packing Checklist',
-        detail: 'Climate-optimized clothing, tech, health, and document essentials.'
-    },
-    {
-        title: 'Photography Guide',
-        detail: 'Golden-hour capture schedule, location suggestions, and etiquette notes.'
-    },
-    {
-        title: 'Safety & Insurance Brief',
-        detail: 'Risk signals, coverage recommendations, and emergency action playbook.'
-    },
-    {
-        title: 'Documentation Tracker',
-        detail: 'Passport validity, visa workflow, and health documentation readiness.'
-    },
-    {
-        title: 'Transit Navigation Plan',
-        detail: 'Airport terminal guidance and door-to-door local mobility routing.'
-    }
+    { title: 'Executive Summary', detail: 'Trip strategy, timing windows, and budget posture overview.' },
+    { title: 'Booking Dashboard', detail: 'Flight, stay, activity, and transfer checkpoints with cost snapshots.' },
+    { title: 'Cultural Guide', detail: 'Etiquette basics, local norms, and practical language starter phrases.' },
+    { title: 'Packing Checklist', detail: 'Climate-optimized clothing, tech, health, and document essentials.' },
+    { title: 'Photography Guide', detail: 'Golden-hour capture schedule, location suggestions, and etiquette notes.' },
+    { title: 'Safety & Insurance Brief', detail: 'Risk signals, coverage recommendations, and emergency action playbook.' },
+    { title: 'Documentation Tracker', detail: 'Passport validity, visa workflow, and health documentation readiness.' },
+    { title: 'Transit Navigation Plan', detail: 'Airport terminal guidance and door-to-door local mobility routing.' }
 ];
 
 const answerTemplates = {
-    weather: (destination) => `AutoAnswer: For ${destination}, prioritize a layered wardrobe and check 10-day forecasts before departure. Build two weather-proof backup activities for each outdoor plan.`,
-    visa: (destination) => `AutoAnswer: For ${destination}, confirm passport validity (6+ months), visa class, entry rules, and health forms. Start document processing early to avoid delays.`,
-    money: (destination) => `AutoAnswer: For ${destination}, combine a no-foreign-fee card with local ATM withdrawals. Keep a split wallet strategy and monitor exchange rates weekly.`,
-    culture: (destination) => `AutoAnswer: For ${destination}, learn greeting phrases, local dining etiquette, and respectful dress norms for religious or heritage spaces.`,
-    safety: (destination) => `AutoAnswer: For ${destination}, register emergency contacts, keep digital copies of documents, and choose travel insurance with health + disruption coverage.`,
-    packing: (destination) => `AutoAnswer: For ${destination}, pack climate-specific layers, universal adapters, medication, photocopies of documents, and a compact day bag.`,
-    transit: (destination) => `AutoAnswer: For ${destination}, pre-map airport-to-hotel routes, backup transport options, and offline maps for first-day navigation resilience.`,
-    rewards: (destination) => `AutoAnswer: For ${destination}, align bookings with bonus categories, airline alliances, and hotel loyalty tiers to maximize points and upgrades.`
+    weather: (destination) => `AutoAnswer: For ${destination}, prioritize layered outfits and check rolling 10-day forecasts. Keep at least two indoor backup options each day.`,
+    visa: (destination) => `AutoAnswer: For ${destination}, verify passport validity (6+ months), visa category, and entry-health forms. Start paperwork early to avoid bottlenecks.`,
+    money: (destination) => `AutoAnswer: For ${destination}, use a no-foreign-fee card plus local ATM withdrawals. Split cash/cards and monitor exchange trends weekly.`,
+    culture: (destination) => `AutoAnswer: For ${destination}, learn greetings, dining norms, and location-specific dress etiquette for respectful interactions.`,
+    safety: (destination) => `AutoAnswer: For ${destination}, keep digital backups of IDs, register emergency contacts, and secure insurance covering health + trip disruption.`,
+    packing: (destination) => `AutoAnswer: For ${destination}, prepare climate-ready layers, adapters, meds, paper copies of documents, and a light day bag.`,
+    transit: (destination) => `AutoAnswer: For ${destination}, pre-map airport-to-stay transfers, alternative transport routes, and offline navigation for day one.`,
+    rewards: (destination) => `AutoAnswer: For ${destination}, align bookings with bonus categories, alliance partners, and loyalty programs to maximize points and upgrades.`
 };
 
 function generate() {
@@ -67,19 +43,27 @@ function generate() {
         <p><strong>Depth:</strong> ${depth}</p>
         <p><strong>Output:</strong> ${format}</p>
         <p><strong>Departure:</strong> ${departureDate || 'Flexible / TBD'}</p>
-        <p><strong>Status:</strong> ✅ AutoAnswer engine activated across weather, visa, finance, culture, safety, packing, transit, and rewards.</p>
+        <p><strong>Status:</strong> ✅ Refreshed package generated with all concierge tracks and AutoAnswer modules active.</p>
     `;
 
     grid.innerHTML = deliverables
-        .map((item) => `
-            <article>
-                <h3>${item.title}</h3>
-                <p>${item.detail}</p>
-            </article>
-        `)
+        .map((item) => `<article><h3>${item.title}</h3><p>${item.detail}</p></article>`)
         .join('');
 
     document.getElementById('outputCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetPlanner() {
+    document.getElementById('topic').value = '';
+    document.getElementById('tripType').selectedIndex = 0;
+    document.getElementById('depth').selectedIndex = 0;
+    document.getElementById('format').selectedIndex = 0;
+    document.getElementById('departureDate').value = '';
+
+    document.querySelector('.output-empty').style.display = 'block';
+    document.getElementById('summary').innerHTML = '';
+    document.getElementById('deliverableGrid').innerHTML = '';
+    document.getElementById('autoanswerBox').textContent = 'Select a question to get an auto-generated travel answer.';
 }
 
 function bindAutoAnswer() {
@@ -97,4 +81,5 @@ function bindAutoAnswer() {
 }
 
 document.getElementById('generateBtn').addEventListener('click', generate);
+document.getElementById('resetBtn').addEventListener('click', resetPlanner);
 bindAutoAnswer();

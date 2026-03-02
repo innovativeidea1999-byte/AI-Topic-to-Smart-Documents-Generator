@@ -7,19 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
     <h1>🌍 Ultimate AI Travel Concierge</h1>
     <p>End-to-end travel planning powered by 18 specialized AI agents</p>
+    <div class="hero-stats" aria-label="Platform highlights">
+        <span>18 Agents</span>
+        <span>8 AutoAnswer Modes</span>
+        <span>1 Complete Travel Package</span>
+    </div>
 </header>
 
 <main>
     <section class="card planner">
         <h2>Build Your Ultimate Travel Package</h2>
-        <input type="text" id="topic" placeholder="Destination or trip theme (e.g., Japan spring itinerary)">
+        <input type="text" id="topic" placeholder="Destination or trip theme (e.g., Japan spring itinerary)" aria-label="Destination or trip theme">
 
         <div class="planner-grid">
-            <select id="tripType">
+            <select id="tripType" aria-label="Trip type">
                 <option>Solo Adventure</option>
                 <option>Family Vacation</option>
                 <option>Romantic Getaway</option>
@@ -27,22 +31,25 @@
                 <option>Luxury Escape</option>
             </select>
 
-            <select id="depth">
+            <select id="depth" aria-label="Planning depth">
                 <option>Quick Plan</option>
                 <option>Detailed Planner</option>
                 <option>Ultimate Concierge Pack</option>
             </select>
 
-            <select id="format">
+            <select id="format" aria-label="Output format">
                 <option value="Booking Dashboard">Booking Dashboard</option>
                 <option value="Travel Playbook (PDF)">Travel Playbook (PDF)</option>
                 <option value="Presentation Deck">Presentation Deck</option>
             </select>
 
-            <input type="date" id="departureDate">
+            <input type="date" id="departureDate" aria-label="Departure date">
         </div>
 
-        <button id="generateBtn" type="button">Generate Travel Intelligence</button>
+        <div class="actions">
+            <button id="generateBtn" type="button">Generate Travel Intelligence</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+        </div>
     </section>
 
     <section class="card output" id="outputCard" aria-live="polite">
@@ -50,6 +57,22 @@
         <p class="output-empty">Your generated package will appear here with all deliverables and smart recommendations.</p>
         <div id="summary"></div>
         <div id="deliverableGrid" class="deliverable-grid"></div>
+    </section>
+
+    <section class="features autoanswer">
+        <h2>⚡ AutoAnswer Concierge</h2>
+        <p>Instantly get destination-aware answers for your most critical planning questions.</p>
+        <div class="question-buttons">
+            <button class="qa-btn" data-question="weather" type="button">Weather & Best Time</button>
+            <button class="qa-btn" data-question="visa" type="button">Visa & Documentation</button>
+            <button class="qa-btn" data-question="money" type="button">Currency & Payments</button>
+            <button class="qa-btn" data-question="culture" type="button">Culture & Etiquette</button>
+            <button class="qa-btn" data-question="safety" type="button">Safety & Insurance</button>
+            <button class="qa-btn" data-question="packing" type="button">Packing Essentials</button>
+            <button class="qa-btn" data-question="transit" type="button">Airport & Transit</button>
+            <button class="qa-btn" data-question="rewards" type="button">Rewards Strategy</button>
+        </div>
+        <div class="answer-box" id="autoanswerBox">Select a question to get an auto-generated travel answer.</div>
     </section>
 
     <section class="features">
@@ -97,24 +120,6 @@
             <li>Golden-hour photography mapping with etiquette guardrails</li>
             <li>Dynamic checklists updated by travel type, budget, and climate</li>
         </ul>
-    </section>
-
-    <section class="features autoanswer">
-        <h2>⚡ AutoAnswer Concierge</h2>
-        <p>Instantly get destination-aware answers for your most critical planning questions.</p>
-        <div class="question-buttons">
-            <button class="qa-btn" data-question="weather" type="button">Weather & Best Time</button>
-            <button class="qa-btn" data-question="visa" type="button">Visa & Documentation</button>
-            <button class="qa-btn" data-question="money" type="button">Currency & Payments</button>
-            <button class="qa-btn" data-question="culture" type="button">Culture & Etiquette</button>
-            <button class="qa-btn" data-question="safety" type="button">Safety & Insurance</button>
-            <button class="qa-btn" data-question="packing" type="button">Packing Essentials</button>
-            <button class="qa-btn" data-question="transit" type="button">Airport & Transit</button>
-            <button class="qa-btn" data-question="rewards" type="button">Rewards Strategy</button>
-        </div>
-        <div class="answer-box" id="autoanswerBox">
-            Select a question to get an auto-generated travel answer.
-        </div>
     </section>
 </main>
 

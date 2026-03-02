@@ -1,7 +1,16 @@
+:root {
+    --bg-1: #1f2a44;
+    --bg-2: #0b132b;
+    --bg-3: #060914;
+    --card: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.14);
+    --text-soft: rgba(255, 255, 255, 0.78);
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #1f2a44, #0b132b 55%, #060914);
+    background: radial-gradient(circle at top, var(--bg-1), var(--bg-2) 55%, var(--bg-3));
     color: white;
 }
 
@@ -14,6 +23,22 @@ header h1 {
     margin-bottom: 8px;
 }
 
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.hero-stats span {
+    border: 1px solid var(--card-border);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text-soft);
+}
+
 main {
     width: min(1100px, 94%);
     margin: 0 auto;
@@ -21,9 +46,9 @@ main {
 
 .card,
 .features {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     padding: 24px;
     margin: 18px 0;
@@ -51,6 +76,12 @@ button {
     margin: 10px 0 14px;
 }
 
+.actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
 button {
     background: linear-gradient(90deg, #00c6ff, #8bf6ff);
     color: #001f2d;
@@ -62,6 +93,17 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0, 198, 255, 0.35);
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: white;
+}
+
+button.secondary:hover {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.09);
 }
 
 .agent-grid,
