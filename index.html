@@ -13,7 +13,7 @@
     <div class="hero-stats" aria-label="Platform highlights">
         <span>18 Agents</span>
         <span>8 AutoAnswer Modes</span>
-        <span>1 Complete Travel Package</span>
+        <span>Live Planner + Save State</span>
     </div>
 </header>
 
@@ -37,6 +37,12 @@
                 <option>Ultimate Concierge Pack</option>
             </select>
 
+            <select id="budget" aria-label="Budget profile">
+                <option>Value</option>
+                <option>Balanced</option>
+                <option>Premium</option>
+            </select>
+
             <select id="format" aria-label="Output format">
                 <option value="Booking Dashboard">Booking Dashboard</option>
                 <option value="Travel Playbook (PDF)">Travel Playbook (PDF)</option>
@@ -44,17 +50,21 @@
             </select>
 
             <input type="date" id="departureDate" aria-label="Departure date">
+            <input type="number" id="duration" min="1" max="45" placeholder="Trip days (e.g., 8)" aria-label="Trip duration in days">
         </div>
 
         <div class="actions">
             <button id="generateBtn" type="button">Generate Travel Intelligence</button>
+            <button id="downloadBtn" type="button">Download Summary</button>
             <button id="resetBtn" type="button" class="secondary">Reset</button>
         </div>
+        <p id="plannerHint" class="hint"></p>
     </section>
 
     <section class="card output" id="outputCard" aria-live="polite">
-        <h2>📦 AutoAnswer Travel Package Preview</h2>
+        <h2>📦 Concierge Package Preview</h2>
         <p class="output-empty">Your generated package will appear here with all deliverables and smart recommendations.</p>
+        <div id="kpis" class="kpi-grid"></div>
         <div id="summary"></div>
         <div id="deliverableGrid" class="deliverable-grid"></div>
     </section>
@@ -73,6 +83,11 @@
             <button class="qa-btn" data-question="rewards" type="button">Rewards Strategy</button>
         </div>
         <div class="answer-box" id="autoanswerBox">Select a question to get an auto-generated travel answer.</div>
+    </section>
+
+    <section class="features">
+        <h2>✅ Pre-Departure Readiness Checklist</h2>
+        <div class="checklist" id="checklist"></div>
     </section>
 
     <section class="features">
@@ -107,19 +122,6 @@
                 </ul>
             </article>
         </div>
-    </section>
-
-    <section class="features highlight">
-        <h2>🎯 Enhanced Intelligence Features</h2>
-        <ul>
-            <li>Weather-integrated packing guides and activity fallback plans</li>
-            <li>Cultural sensitivity coaching with language essentials</li>
-            <li>Emergency response planning with safety escalation paths</li>
-            <li>Door-to-door transit logistics from airport to accommodation</li>
-            <li>Rewards optimization for points, miles, and elite perks</li>
-            <li>Golden-hour photography mapping with etiquette guardrails</li>
-            <li>Dynamic checklists updated by travel type, budget, and climate</li>
-        </ul>
     </section>
 </main>
 

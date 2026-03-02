@@ -1,14 +1,15 @@
 # 🌍 Ultimate AI Travel Concierge
 
-## 🚀 Refreshed Experience
-A modern AI travel-planning web app that orchestrates **18 specialized agents** plus an **AutoAnswer engine** to produce a complete travel package.
+## 🚀 Refreshed Experience (Complete Edition)
+A modern AI travel-planning web app orchestrating **18 specialized agents** and an **AutoAnswer engine** to produce an end-to-end travel package.
 
-## ✅ What’s New in This Refresh
-- Cleaner hero area with quick capability highlights
-- Improved planner UX with a dedicated reset flow
-- On-page generated package summary and deliverables grid
-- AutoAnswer quick responses for 8 key travel topics
-- Responsive layout improvements for cards and controls
+## ✅ Included Capabilities
+- Planner with destination, trip type, depth, budget profile, format, departure date, and duration
+- On-page package generation with KPI snapshot cards and all core deliverables
+- AutoAnswer quick-response assistant across 8 high-priority travel topics
+- Downloadable plain-text trip summary
+- Reset flow and local draft persistence (auto-save via browser localStorage)
+- Pre-departure readiness checklist for operational travel prep
 
 ## 📦 Final Package Deliverables
 - Executive Summary

@@ -19,9 +19,7 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin-bottom: 8px;
-}
+header h1 { margin-bottom: 8px; }
 
 .hero-stats {
     display: flex;
@@ -39,10 +37,7 @@ header h1 {
     color: var(--text-soft);
 }
 
-main {
-    width: min(1100px, 94%);
-    margin: 0 auto;
-}
+main { width: min(1100px, 94%); margin: 0 auto; }
 
 .card,
 .features {
@@ -54,10 +49,7 @@ main {
     margin: 18px 0;
 }
 
-h2,
-h3 {
-    margin-top: 0;
-}
+h2, h3 { margin-top: 0; }
 
 .planner input,
 .planner select,
@@ -69,18 +61,22 @@ button {
     box-sizing: border-box;
 }
 
-.planner-grid {
+.planner-grid,
+.actions,
+.question-buttons,
+.kpi-grid,
+.agent-grid,
+.deliverable-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
-    margin: 10px 0 14px;
+    gap: 12px;
 }
 
-.actions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
-}
+.planner-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 10px 0 14px; }
+.actions { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.question-buttons { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 16px 0; }
+.kpi-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 12px; }
+.agent-grid,
+.deliverable-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 button {
     background: linear-gradient(90deg, #00c6ff, #8bf6ff);
@@ -90,65 +86,26 @@ button {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0, 198, 255, 0.35);
-}
-
-button.secondary {
-    background: transparent;
-    border: 1px solid var(--card-border);
-    color: white;
-}
-
-button.secondary:hover {
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.09);
-}
-
-.agent-grid,
-.deliverable-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-}
+button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0, 198, 255, 0.35); }
+button.secondary { background: transparent; border: 1px solid var(--card-border); color: white; }
+button.secondary:hover { box-shadow: none; background: rgba(255, 255, 255, 0.09); }
+.qa-btn.active { outline: 2px solid #8bf6ff; }
 
 .agent-grid article,
-.deliverable-grid article {
+.deliverable-grid article,
+.kpi-grid article {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 14px;
 }
 
-.features ul {
-    margin: 0;
-    padding-left: 20px;
-    line-height: 1.6;
-}
+.kpi-grid h3 { margin: 0 0 4px; }
+.kpi-grid p { margin: 0; color: var(--text-soft); }
 
-.highlight {
-    background: rgba(111, 213, 255, 0.12);
-}
-
-.output-empty {
-    opacity: 0.82;
-}
-
-#summary p {
-    margin: 7px 0;
-}
-
-.question-buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    margin: 16px 0;
-}
-
-.question-buttons .qa-btn {
-    font-size: 14px;
-}
+.features ul { margin: 0; padding-left: 20px; line-height: 1.6; }
+.output-empty { opacity: 0.82; }
+#summary p { margin: 7px 0; }
 
 .answer-box {
     background: rgba(255, 255, 255, 0.06);
@@ -156,6 +113,25 @@ button.secondary:hover {
     border-radius: 12px;
     padding: 14px;
     min-height: 60px;
+}
+
+.checklist {
+    display: grid;
+    gap: 8px;
+}
+
+.checklist label {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.hint {
+    min-height: 20px;
+    color: #9de8ff;
+    font-size: 14px;
+    margin: 12px 0 0;
 }
 
 footer {
