@@ -1,28 +1,30 @@
+# 🌍 Ultimate AI Travel Concierge
 
-# 🧠 AI Smart Content & Document Generator
+## 🚀 Refreshed Experience
+A polished travel-planning web app orchestrating **18 specialized agents** with a smart **AutoAnswer** assistant and a fully interactive planner flow.
 
-## 🚀 Overview
-A modern AI SaaS web app that converts any topic into:
-- 📊 Excel
-- 📈 PowerPoint
-- 📄 PDF
+## ✅ What This Refresh Adds
+- Theme toggle (dark/light) with saved preference
+- Live planner with state persistence via `localStorage`
+- KPI summary cards and downloadable trip summary
+- Pre-departure checklist with real-time completion progress
+- Keyboard-friendly generation (`Enter` in destination field)
+- AutoAnswer quick responses across 8 key travel categories
 
-## 🛠 Deployment Steps
-
-1. Create a new GitHub repository
-2. Upload all 4 files
-3. Go to Settings → Pages
-4. Select branch (main) and root folder
-5. Save
-6. Your website will be live in 1–2 minutes
+## 📦 Core Deliverables
+- Executive Summary
+- Booking Dashboard
+- Cultural Guide
+- Packing Checklist
+- Photography Guide
+- Safety & Insurance Brief
+- Documentation Tracker
+- Transit Navigation Plan
 
 ## 🔧 Next Step (Backend Required)
-To enable real AI generation:
-- Connect OpenAI API
-- Use Python backend (Flask/FastAPI)
-- Add file generation logic
-- Deploy on Vercel / Render / Railway
+- Integrate weather, flights, hotels, maps, forex, visa APIs
+- Add orchestration backend (Flask/FastAPI)
+- Generate real exports (PDF/dashboard/deck)
 
 ---
-
-© 2026 AI Smart Generator
+© 2026 Ultimate AI Travel Concierge
